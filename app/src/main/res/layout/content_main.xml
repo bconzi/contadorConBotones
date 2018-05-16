@@ -6,57 +6,98 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteY="73dp"
     tools:showIn="@layout/activity_main">
 
     <TextView
         android:id="@+id/contador_pulsaciones"
         android:layout_width="229dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="79dp"
-        android:layout_marginTop="95dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="237dp"
+        android:layout_marginTop="21dp"
         android:ems="10"
-        android:text="Contador:"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/incrementa"
+        android:text="Contador"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/n_reseteo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/resetea"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/numero"
+        android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="220dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="Resetear"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="4dp"
+        android:textAlignment="center"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="reseteaContador"/>
+        app:layout_constraintTop_toBottomOf="@+id/contador_pulsaciones" />
+
 
     <Button
         android:id="@+id/incrementa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="Incrementa"
-        app:layout_constraintBottom_toTopOf="@+id/resetea"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="incrementaContador"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="40dp"
+        android:onClick="incrementaContador"
+        android:text="+"
+        android:textSize="70dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/decrementa"
+        app:layout_constraintEnd_toStartOf="@+id/decrementa"
+        app:layout_constraintHorizontal_bias="0.019"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <Button
         android:id="@+id/decrementa"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="28dp"
+        android:onClick="decrementaContador"
+        android:text="-"
+        android:textSize="70sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.294" />
+
+    <Button
+        android:id="@+id/resetea"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="36dp"
+        android:onClick="reseteaContador"
+        android:text="Resetear"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/n_reseteo"
+        android:layout_width="72sp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:cursorVisible="false"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="numberSigned"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/negativos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contador_pulsaciones" />
+
+    <CheckBox
+        android:id="@+id/negativos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
-        android:text="Decrementa"
+        android:layout_marginBottom="121dp"
+        android:text="conteoNegativos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resetea"
-        android:onClick="decrementaContador"/>
+        app:layout_constraintTop_toBottomOf="@+id/n_reseteo" />
 </android.support.constraint.ConstraintLayout>
